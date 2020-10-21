@@ -34,3 +34,8 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
   E. Jeg pliuset anttall endringen.
 
 * Oppgave 2: 
+  A. Jeg kommentet ut exception //throw new UnsupportedOperationException("Ikke kodet ennå!");
+  B. Jeg kaller Noden //P//. 
+  D. så bruker vi while lokke. så har vi compare vediene //P.
+  etter jeg har kjørte testen. det gikk bra utentatt en feil i Oppgave 2a
+  //Oppgave 2a: Feil antall(T)-metoden!//

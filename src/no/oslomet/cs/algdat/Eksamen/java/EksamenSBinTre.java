@@ -111,7 +111,9 @@ public class EksamenSBinTre<T> {
     }
 
     public boolean fjern(T verdi) {
+
         throw new UnsupportedOperationException("Ikke kodet ennå!");
+
     }
 
     public int fjernAlle(T verdi) {
@@ -119,7 +121,18 @@ public class EksamenSBinTre<T> {
     }
 
     public int antall(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        Node<T> p = rot;
+        int antall = 0;
+        while (true)
+        {
+            int c = comp.compare(verdi, p.verdi);
+            if (p.venstre != null) antall += antall(p.verdi);
+            p = p.høyre;
+            if (c == 0)
+                return antall;
+            antall++;
+        }
     }
 
     public void nullstill() {
