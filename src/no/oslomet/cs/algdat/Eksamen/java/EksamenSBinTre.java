@@ -122,16 +122,23 @@ public class EksamenSBinTre<T> {
 
     public int antall(T verdi) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
-        Node<T> p = rot;
         int antall = 0;
-        while (p != null)
-        {
-            int c = comp.compare(verdi, p.verdi);
-            p = p.høyre;
-            if (c == 0)
-            antall++;
-            p=p.høyre;
+        if (inneholder(verdi)){
+            Node<T> p = rot;
+            while (p != null){
+                int c = comp.compare(verdi, p.verdi);
+            if (c<0){
+                p = p.høyre;
+            }
+                else {
+                if (c == 0)
+                    antall++;
+                p=p.høyre;
+            }
+            }
+
         }
+
         return antall;
     }
 
