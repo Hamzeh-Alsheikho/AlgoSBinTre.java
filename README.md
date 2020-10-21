@@ -29,5 +29,8 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
      	at no.oslomet.cs.algdat.Eksamen.java.EksamenSBinTre.leggInn(EksamenSBinTre.java:86)
      	at no.oslomet.cs.algdat.Eksamen.java.Main.main(Main.java:9)//
   B. Jeg kopieret Programkode 5.2 3 a) form komdendum.
+  C. Her har jeg opprettert en ny node q og kjørte testen.
+  D. Testen er grønn, og det ser ut al alt fugerer bra. 
+  E. Jeg pliuset anttall endringen.
 
 * Oppgave 2: 
