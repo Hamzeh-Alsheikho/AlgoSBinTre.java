@@ -1,9 +1,8 @@
-package no.oslomet.cs.algdat.Eksamen;
+package no.oslomet.cs.algdat.Eksamen.java;
 
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.StringJoiner;
 
 public class EksamenSBinTre<T> {
@@ -84,7 +83,8 @@ public class EksamenSBinTre<T> {
     }
 
     public boolean leggInn(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+       //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        return true;
     }
 
     public boolean fjern(T verdi) {

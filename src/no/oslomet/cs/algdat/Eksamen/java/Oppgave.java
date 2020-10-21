@@ -1,4 +1,4 @@
-package no.oslomet.cs.algdat.Eksamen;
+package no.oslomet.cs.algdat.Eksamen.java;
 
 @FunctionalInterface
 public interface Oppgave<T>  // legges under hjelpeklasser
