@@ -39,3 +39,7 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
   D. så bruker vi while lokke. så har vi compare vediene //P.
   etter jeg har kjørte testen. det gikk bra utentatt en feil i Oppgave 2a
   //Oppgave 2a: Feil antall(T)-metoden!//
+  - Det viser seg at det var en feil i lokken, etter fixing, ble det to feiler, 
+  //Oppgave 2b: Skal ikke kaste unntak her!
+    Oppgave 2c: Feil antall(T)-metoden!// men en av de er anklet å håntere.
+    

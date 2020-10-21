@@ -124,15 +124,15 @@ public class EksamenSBinTre<T> {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
         Node<T> p = rot;
         int antall = 0;
-        while (true)
+        while (p != null)
         {
             int c = comp.compare(verdi, p.verdi);
-            if (p.venstre != null) antall += antall(p.verdi);
             p = p.høyre;
             if (c == 0)
-                return antall;
             antall++;
+            p=p.høyre;
         }
+        return antall;
     }
 
     public void nullstill() {
