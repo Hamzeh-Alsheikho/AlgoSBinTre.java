@@ -44,3 +44,11 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
     Oppgave 2c: Feil antall(T)-metoden!// men en av de er anklet å håntere.
   C. jeg compare verdi to p verdi, hvis større den går til høyre.
      elles den gå til venstre.
+     
+* Oppgave 3:
+   //førstePostorden
+  A. Jeg prøver å code med noe steps her, hvis p har et høyre subtre, så er den neste helt til venstre i det subtreet
+  B. p har ikke et høyre subtre, den neste befinner seg dermed over p i treet
+  C. hvis p er det høyre barnet til foreldren sin, er det besteforeldren som er den neste
+  D. hvis p er det venstre barnet til foreldren sin, er det foreldren som er den neste.
+  E. siden høyrebarna blir satt til p.forelder i while-løkken over, så tilsvarer dette å sette p = p.forelder.forelder for høyrebarna
