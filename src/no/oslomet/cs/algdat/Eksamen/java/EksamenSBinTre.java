@@ -150,35 +150,14 @@ public class EksamenSBinTre<T> {
         {
             if (p.venstre != null)
                 p = p.venstre;
-            else if (p.høyre != null) p = p.høyre.venstre;
-
-
-            return p;
+            else if (p.høyre != null) p = p.høyre;
+            else return p;
         }
 
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-
-        /*if (p.høyre != null) {
-            p = p.høyre;
-            while (p.venstre != null)
-                p = p.venstre;
-        }
-
-        else {
-
-            while (p.forelder != null && p.forelder.høyre == p) {
-                p = p.forelder;
-            }
-
-            p = p.forelder;
-        }
-
-        return p;
-
-         */
-        if (p.venstre != null){
+        /*if (p.venstre != null){
             return p.venstre;
         }else if (p.høyre != null){
             return p.høyre;
@@ -192,11 +171,28 @@ public class EksamenSBinTre<T> {
             }else
                 return null;
         }
+
+         */
+        if (p.venstre != null) {
+            p = p.venstre;
+            while (p.høyre != null)
+                p = p.høyre;
+        }
+
+        else {
+
+            while (p.forelder != null && p.forelder.venstre == p) {
+                p = p.forelder;
+            }
+            p = p.forelder;
+        }
+
+        return p;
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
-
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
+
 
     }
 

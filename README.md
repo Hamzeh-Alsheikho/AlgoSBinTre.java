@@ -57,3 +57,11 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
   A. her har jeg det sammme code men, men fortsatt en fiel
   // Oppgave 3e: Her kastes et unntak! Det skal ikke skje!
   etter debuging står det S 10.
+  - den forrje koden funket ikke, så prøver jeg en annen kode fra forlesningen
+  testen ble grønn men har noen feiler.
+  //Oppgave 3d: Feil i toStringPostOrder()! Men feilen kan
+    ligge i leggInn() eller i nesteInorden().
+    Oppgave 3f: Feil i toStringPostOrder()! Men feilen kan
+    ligge i leggInn() eller i nesteInorden().
+    Oppgave 3g: Feil i toStringPostOrder()! Men feilen kan
+    ligge i leggInn() eller i nesteInorden().
