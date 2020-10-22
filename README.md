@@ -42,4 +42,5 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
   - Det viser seg at det var en feil i lokken, etter fixing, ble det to feiler, 
   //Oppgave 2b: Skal ikke kaste unntak her!
     Oppgave 2c: Feil antall(T)-metoden!// men en av de er anklet å håntere.
-    
+  C. jeg compare verdi to p verdi, hvis større den går til høyre.
+     elles den gå til venstre.
