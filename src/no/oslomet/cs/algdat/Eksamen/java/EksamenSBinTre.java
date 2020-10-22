@@ -1,10 +1,7 @@
 package no.oslomet.cs.algdat.Eksamen.java;
 
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Objects;
-import java.util.StringJoiner;
+import java.util.*;
 
 public class EksamenSBinTre<T> {
     private static final class Node<T>   // en indre nodeklasse
@@ -112,12 +109,14 @@ public class EksamenSBinTre<T> {
 
     public boolean fjern(T verdi) {
 
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        return true;
 
     }
 
     public int fjernAlle(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        return 0;
     }
 
     public int antall(T verdi) {
@@ -143,10 +142,25 @@ public class EksamenSBinTre<T> {
     }
 
     public void nullstill() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
+         while (true) {
+            if (p.venstre != null)
+                p = p.høyre;
+
+            else if (p.høyre != null)
+                p = p.venstre;
+
+            else
+                break;
+        }
+        return p;
+
+    }
+
+    private static <T> Node<T> nestePostorden(Node<T> p) {
 
         if (p.høyre != null) {
             p = p.høyre;
@@ -156,18 +170,12 @@ public class EksamenSBinTre<T> {
 
         else {
 
-
             while (p.forelder != null && p.forelder.høyre == p) {
                 p = p.forelder;
             }
 
             p = p.forelder;
         }
-
-        return p;
-    }
-
-    private static <T> Node<T> nestePostorden(Node<T> p) {
 
         return p;
     }

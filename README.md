@@ -51,4 +51,9 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
   B. p har ikke et høyre subtre, den neste befinner seg dermed over p i treet
   C. hvis p er det høyre barnet til foreldren sin, er det besteforeldren som er den neste
   D. hvis p er det venstre barnet til foreldren sin, er det foreldren som er den neste.
-  E. siden høyrebarna blir satt til p.forelder i while-løkken over, så tilsvarer dette å sette p = p.forelder.forelder for høyrebarna
+  E. siden høyrebarna blir satt til p.forelder i while-løkken over, så tilsvarer dette å sette p = p.forelder.forelder for høyrebarna.
+  Obs. coden er fra Programkode 5.1.7 g.
+  //nestePostorden
+  A. her har jeg det sammme code men, men fortsatt en fiel
+  // Oppgave 3e: Her kastes et unntak! Det skal ikke skje!
+  etter debuging står det S 10.
