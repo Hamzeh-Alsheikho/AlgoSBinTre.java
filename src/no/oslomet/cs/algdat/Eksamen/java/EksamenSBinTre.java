@@ -146,6 +146,7 @@ public class EksamenSBinTre<T> {
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
         while (true)   // Denne koden er fra kompendiet Programkode 5.1.7 h)
         {
             if (p.venstre != null)
@@ -157,8 +158,9 @@ public class EksamenSBinTre<T> {
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-        Node<T> q = p.forelder;      //hjelpenode
-        // Så lenge parent til P ikke null
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        Node<T> q = p.forelder;      //hjelpenode. q skal være forelder til p
+        // Vi løper gjennom while loke, å lenge parent til P ikke null
         while(q != null) {
             //
             if(p == q.høyre) return q;   // Vi får parent hvis p likke sin parent.
@@ -179,7 +181,7 @@ public class EksamenSBinTre<T> {
                     //hvis p er venstrebarnet til q og det eksisterer et høyre subtre for q er den første
                     // førstePostorden der den neste
                 } else {
-                    return førstePostorden(q.høyre);
+                    return førstePostorden(q.høyre);   //verdien er funnet
                 }
             }
         }
@@ -188,7 +190,10 @@ public class EksamenSBinTre<T> {
 
     public void postorden(Oppgave<? super T> oppgave) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
-        
+        Node<T> p = førstePostorden(rot); // (oppretter ny node pekere) vi tar p som rot til førstepst
+        while (p != null){                // Vi løpper gjennom while loke så lenge den ikke null
+            oppgave.utførOppgave(p.verdi);   //keller vi interface
+            p=nestePostorden(p);}            // går videre of flytte pekeren fra første til nest
 
     }
 

@@ -71,4 +71,11 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
     - nestePostorden brukte et prggram for å tegne treet. prgramme het: 
     Binary Search Tree //https://www.cs.usfca.edu/~galles/visualization/BST.html//
     for å komme fram til nest node. 
-    
+* Oppgave 4:
+    - Første delen er postorden. 
+    A. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
+    //throw new UnsupportedOperationException("Ikke kodet ennå!");
+    B. Oppretter ny node pekere) vi tar p som rot til førstepst.
+    C. Vi løpper gjennom while loke så lenge den ikke null. 
+    D. keller vi interface med verdien til p.
+    E. går videre of flytte pekeren fra første til nest.
