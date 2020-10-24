@@ -65,3 +65,10 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
     ligge i leggInn() eller i nesteInorden().
     Oppgave 3g: Feil i toStringPostOrder()! Men feilen kan
     ligge i leggInn() eller i nesteInorden().
+    -- Førsteposteorden var helt rikktig, men nestepostorden var komplisert det hjlup å tegne treet.
+    Jeg får hjelpe norde q som represrntere p parents.
+    - Tillslutt førstePostorden var fra kompendiet Programkode 5.1.7 h)
+    - nestePostorden brukte et prggram for å tegne treet. prgramme het: 
+    Binary Search Tree //https://www.cs.usfca.edu/~galles/visualization/BST.html//
+    for å komme fram til nest node. 
+    

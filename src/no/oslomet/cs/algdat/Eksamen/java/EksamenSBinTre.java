@@ -146,7 +146,7 @@ public class EksamenSBinTre<T> {
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
-        while (true)
+        while (true)   // Denne koden er fra kompendiet Programkode 5.1.7 h)
         {
             if (p.venstre != null)
                 p = p.venstre;
@@ -157,42 +157,38 @@ public class EksamenSBinTre<T> {
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-        /*if (p.venstre != null){
-            return p.venstre;
-        }else if (p.høyre != null){
-            return p.høyre;
-        }else {
-            Node current = p.forelder;
-            while (current != null && current.høyre ==p){
-                current = current.forelder;
-                p = p.forelder;
-            }if (current != null){
-                return current.høyre;
-            }else
-                return null;
-        }
+        Node<T> q = p.forelder;      //hjelpenode
+        // Så lenge parent til P ikke null
+        while(q != null) {
+            //
+            if(p == q.høyre) return q;   // Vi får parent hvis p likke sin parent.
+            if (p == q.venstre) {
+                if (q.høyre == null) {  // Her er p er alene barn
+                    return q;
+                    // Vi kjekker venstere siden først av treet
+                    // er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
 
-         */
-        if (p.venstre != null) {
-            p = p.venstre;
-            while (p.høyre != null)
-                p = p.høyre;
-        }
+                } else if (q.høyre.venstre != null && q.høyre.venstre.venstre != null) {
+                    return q.høyre.venstre.venstre;
+                    // så kjekker høyre siden av treet
+                } else if (q.høyre.venstre != null && q.høyre.venstre.venstre == null) {
+                    return q.høyre.venstre;
 
-        else {
-
-            while (p.forelder != null && p.forelder.venstre == p) {
-                p = p.forelder;
+                } else if (q.høyre.høyre == null) {
+                    return q.høyre;
+                    //hvis p er venstrebarnet til q og det eksisterer et høyre subtre for q er den første
+                    // førstePostorden der den neste
+                } else {
+                    return førstePostorden(q.høyre);
+                }
             }
-            p = p.forelder;
         }
-
-        return p;
+        return null;
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
-
+        
 
     }
 
