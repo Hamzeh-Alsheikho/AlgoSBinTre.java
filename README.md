@@ -34,7 +34,7 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
   E. Jeg pliuset anttall endringen.
 
 * Oppgave 2: 
-  A. Jeg kommentet ut exception //throw new UnsupportedOperationException("Ikke kodet ennå!");
+  A. Jeg kommentarte ut exception //throw new UnsupportedOperationException("Ikke kodet ennå!");
   B. Jeg kaller Noden //P//. 
   D. så bruker vi while lokke. så har vi compare vediene //P.
   etter jeg har kjørte testen. det gikk bra utentatt en feil i Oppgave 2a
@@ -107,3 +107,9 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
        Oppgave 6j: Feil i fjern(T)!
        Oppgave 6m: Feil i nullstill() - antall er feil!
        Oppgave 6n: Feil i nullstill()!//
+       - Tredje delen er nullstill
+    H. Denne koden er kopiert fra kompendiet Oppgave 5 Løsningsforslag - oppgaver i Avsnitt 5.2.8
+    I. Jeg sjekker først om teert er tomt, hivs ikke, så nuller vi roten.
+    J. Jeg opdetere antallet og endingene i treet.
+    K. Jeg lager en privet viod som tar Node<T> p.
+    L. Jeg nullstille venstre siden først og så høyre siden av treet.
