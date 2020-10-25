@@ -66,7 +66,7 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
     Oppgave 3g: Feil i toStringPostOrder()! Men feilen kan
     ligge i leggInn() eller i nesteInorden().
     -- Førsteposteorden var helt rikktig, men nestepostorden var komplisert det hjlup å tegne treet.
-    Jeg får hjelpe norde q som represrntere p parents.
+    Jeg får hjelpe node q som represrntere p parents.
     - Tillslutt førstePostorden var fra kompendiet Programkode 5.1.7 h)
     - nestePostorden brukte et prggram for å tegne treet. prgramme het: 
     Binary Search Tree //https://www.cs.usfca.edu/~galles/visualization/BST.html//
@@ -79,3 +79,13 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
     C. Vi løpper gjennom while loke så lenge den ikke null. 
     D. keller vi interface med verdien til p.
     E. går videre of flytte pekeren fra første til nest.
+       Testen kunne ikke kjøres uten kodeing del to. feilmelingen var.
+        //org.opentest4j.AssertionFailedError: 
+        Expected :
+        Actual   : 2 4 5 3 1 7 9 8 6 11 13 12 14 10//
+    - Den andre delen postordenRecursive
+    F. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+    G. vi sjekker verdien i treet fra vernste siden først.
+    H. vi sjekker verdien av p på den andre siden av treet
+    
