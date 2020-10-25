@@ -92,7 +92,18 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
 
 * oppgave 6:
     - Første delen er fjern
-    A.  Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
+    A. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
             //throw new UnsupportedOperationException("Ikke kodet ennå!");
     B. koperte koden fra kompendet Løsningsforslag - oppgaver i Avsnitt 5.2.13
     C. Denne koden trenger noen endring for å til passe denne legginn oppgaven.
+    - Andre delen er fjernAll
+    D. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
+                   //throw new UnsupportedOperationException("Ikke kodet ennå!");
+    E. vi sjekker om treet er alrede tomet.
+    F. vi løper gjennom en for løke 
+    G. oppdetere antallet
+    - Testen kan ikke kjøres med mindre nullstillingen er kodet. fielen er:
+    // Oppgave 6i: Feil i fjern(T)!
+       Oppgave 6j: Feil i fjern(T)!
+       Oppgave 6m: Feil i nullstill() - antall er feil!
+       Oppgave 6n: Feil i nullstill()!//

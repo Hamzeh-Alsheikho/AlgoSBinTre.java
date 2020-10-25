@@ -151,7 +151,11 @@ public class EksamenSBinTre<T> {
 
     public int fjernAlle(T verdi) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
-        return 0;
+        if(tom()) return 0;   // ingen verdier
+        int fjernVerdi = 0;
+        while (fjern(verdi)) //vi løper gjennom while løke
+            fjernVerdi++;    // oppdetere antallet
+        return fjernVerdi;
     }
 
     public int antall(T verdi) {
