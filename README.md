@@ -88,4 +88,11 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
     G. vi sjekker verdien i treet fra vernste siden først.
     H. vi sjekker verdien av p på den andre siden av treet
-    
+* oppgave 5:
+
+* oppgave 6:
+    - Første delen er fjern
+    A.  Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
+            //throw new UnsupportedOperationException("Ikke kodet ennå!");
+    B. koperte koden fra kompendet Løsningsforslag - oppgaver i Avsnitt 5.2.13
+    C. Denne koden trenger noen endring for å til passe denne legginn oppgaven.
