@@ -125,6 +125,7 @@ public class EksamenSBinTre<T> {
         if (p.venstre == null || p.høyre == null)  // Tilfelle 1) og 2)
         {
             Node<T> b = p.venstre != null ? p.venstre : p.høyre;  // b for barn
+            if (b != null) b.forelder = q;
             if (p == rot) rot = b;
             else if (p == q.venstre) q.venstre = b;
             else q.høyre = b;
@@ -219,7 +220,8 @@ public class EksamenSBinTre<T> {
         Node<T> q = p.forelder;      //hjelpenode. q skal være forelder til p
         // Vi løper gjennom while loke, å lenge parent til P ikke null
         while(q != null) {
-            //
+            if (p == q.høyre && q.høyre == null)     //er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
+                p = q;
             if(p == q.høyre) return q;   // Vi får parent hvis p likke sin parent.
             if (p == q.venstre) {
                 if (q.høyre == null) {  // Her er p er alene barn
