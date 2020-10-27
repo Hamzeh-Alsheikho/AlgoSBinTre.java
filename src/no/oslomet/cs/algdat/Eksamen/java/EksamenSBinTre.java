@@ -259,7 +259,25 @@ public class EksamenSBinTre<T> {
     }
 
     public ArrayList<T> serialize() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        Node<T> verdi = null, venstre=null, høyre = null;
+        ArrayList<T> reslut = new ArrayList<>();
+        if (rot == null){
+            return reslut;
+        }
+        Queue<T> queue = new LinkedList<>();
+        queue.add(rot.verdi);
+        while (!queue.isEmpty()){
+            int size = queue.size();
+            ArrayList<T> currentLivel = new ArrayList<>();
+            for (int i = 0; i< size; i++){
+                T current = queue.remove();
+
+            }
+            reslut.add((T) currentLivel);
+        }
+        return reslut;
+
     }
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {

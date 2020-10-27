@@ -98,7 +98,15 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
     G. vi sjekker verdien i treet fra vernste siden først.
     H. vi sjekker verdien av p på den andre siden av treet
 * oppgave 5:
-
+    A. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+    B. Jeg lager en ny arraylist.
+    C. vi sjekker roten om den er null
+    D. vi lager en quese for å legge til elemtene.
+        - så kaller vi medthoden.
+        -forenkle argumenter
+        - ende i basitilfelle.
+            
 * oppgave 6:
     - Første delen er fjern
     A. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
