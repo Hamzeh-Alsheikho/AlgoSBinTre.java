@@ -260,24 +260,26 @@ public class EksamenSBinTre<T> {
 
     public ArrayList<T> serialize() {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
-        Node<T> verdi = null, venstre=null, høyre = null;
-        ArrayList<T> reslut = new ArrayList<>();
-        if (rot == null){
-            return reslut;
+        ArrayList<T> results = new ArrayList<>();  // lager en ny arrylist
+        if (rot == null) {   // sjekker roten først
+            return results;
         }
-        Queue<T> queue = new LinkedList<>();
-        queue.add(rot.verdi);
-        while (!queue.isEmpty()){
-            int size = queue.size();
-            ArrayList<T> currentLivel = new ArrayList<>();
-            for (int i = 0; i< size; i++){
-                T current = queue.remove();
-
+        Queue<Node<T>> q = new LinkedList<>();  // lager en queue som tar elementer in noden.
+        q.add(rot);                             // legge til roten først
+        while (!q.isEmpty()) {                  // vi løper gjennom en while løke
+            int sizeOfqueue = q.size();
+            for (int i = 0; i < sizeOfqueue; i++) { // - så kaller vi medthoden.
+                Node<T> temp = q.remove();            // -forenkle argumenter
+                results.add(temp.verdi);              // - ende i basitilfelle
+                if (temp.venstre != null) {
+                    q.add(temp.venstre);
+                }
+                if (temp.høyre != null) {
+                    q.add(temp.høyre);
+                }
             }
-            reslut.add((T) currentLivel);
         }
-        return reslut;
-
+        return results;
     }
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
