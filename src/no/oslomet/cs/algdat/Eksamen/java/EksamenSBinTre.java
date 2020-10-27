@@ -218,33 +218,21 @@ public class EksamenSBinTre<T> {
     private static <T> Node<T> nestePostorden(Node<T> p) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
         Node<T> q = p.forelder;      //hjelpenode. q skal være forelder til p
-        // Vi løper gjennom while loke, å lenge parent til P ikke null
-        while(q != null) {
-            if (p == q.høyre && q.høyre == null)     //er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
-                p = q;
-            if(p == q.høyre) return q;   // Vi får parent hvis p likke sin parent.
-            if (p == q.venstre) {
-                if (q.høyre == null) {  // Her er p er alene barn
-                    return q;
-                    // Vi kjekker venstere siden først av treet
-                    // er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
+                 if (q==null){
+                p= null;
+            }else if (q.høyre==p){  //er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
+                p=q;
+                // Vi kjekker venstere siden først av treet
+                // er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
 
-                } else if (q.høyre.venstre != null && q.høyre.venstre.venstre != null) {
-                    return q.høyre.venstre.venstre;
-                    // så kjekker høyre siden av treet
-                } else if (q.høyre.venstre != null && q.høyre.venstre.venstre == null) {
-                    return q.høyre.venstre;
-
-                } else if (q.høyre.høyre == null) {
-                    return q.høyre;
+            }else if (q.venstre==p){
+                if (q.høyre==null){
+                    p=q;
                     //hvis p er venstrebarnet til q og det eksisterer et høyre subtre for q er den første
                     // førstePostorden der den neste
-                } else {
-                    return førstePostorden(q.høyre);   //verdien er funnet
-                }
+                }else p = førstePostorden(q.høyre);
             }
-        }
-        return null;
+            return p;
     }
 
     public void postorden(Oppgave<? super T> oppgave) {

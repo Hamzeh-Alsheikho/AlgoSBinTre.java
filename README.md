@@ -71,6 +71,15 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
     - nestePostorden brukte et prggram for å tegne treet. prgramme het: 
     Binary Search Tree //https://www.cs.usfca.edu/~galles/visualization/BST.html//
     for å komme fram til nest node. 
+    ///////////////////////////////////////
+    - Nestepotorden andre forsøk:
+    A. //throw new UnsupportedOperationException("Ikke kodet ennå!");
+    B. hjelpenode. q skal være forelder til p
+    C. er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste     
+    D. Vi kjekker venstere siden først av treet
+    E. er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
+    F. hvis p er venstrebarnet til q og det eksisterer et høyre subtre for q er den første
+    G. førstePostorden der den neste
 * Oppgave 4:
     - Første delen er postorden. 
     A. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
