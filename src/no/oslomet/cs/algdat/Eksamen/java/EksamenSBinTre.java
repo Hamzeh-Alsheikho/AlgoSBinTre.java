@@ -42,7 +42,6 @@ public class EksamenSBinTre<T> {
         antall = 0;
         comp = c;
     }
-
     public boolean inneholder(T verdi) {
         if (verdi == null) return false;
 
@@ -110,42 +109,34 @@ public class EksamenSBinTre<T> {
     public boolean fjern(T verdi) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
         if (verdi == null) return false;  // treet har ingen nullverdier
-
-        Node<T> p = rot, q = null;   // q skal være forelder til p
-
-        while (p != null)            // leter etter verdi
-        {
+        Node<T> p = rot, q = null;         // q skal være forelder til p
+        while (p != null){                 // leter etter verdi
             int cmp = comp.compare(verdi,p.verdi);      // sammenligner
             if (cmp < 0) { q = p; p = p.venstre; }      // går til venstre
             else if (cmp > 0) { q = p; p = p.høyre; }   // går til høyre
-            else break;    // den søkte verdien ligger i p
+            else break;                               // verdien er i p
         }
-        if (p == null) return false;   // finner ikke verdi
-
-        if (p.venstre == null || p.høyre == null)  // Tilfelle 1) og 2)
-        {
-            Node<T> b = p.venstre != null ? p.venstre : p.høyre;  // b for barn
+        if (p == null) return false;   //  verdien finnes ikke
+        if (p.venstre == null || p.høyre == null){  // Tilfelle 1) og 2)
+            Node<T> b = p.venstre != null ? p.venstre : p.høyre;  // b får barn venstre og høyre
             if (b != null) b.forelder = q;
             if (p == rot) rot = b;
             else if (p == q.venstre) q.venstre = b;
             else q.høyre = b;
         }
-        else  // Tilfelle 3)
-        {
-            Node<T> s = p, r = p.høyre;   // finner neste i inorden
+        else{                                          // sist ilfelle
+            Node<T> s = p, r = p.høyre;   // finner neste
             while (r.venstre != null)
             {
-                s = r;    // s er forelder til r
+                s = r;                   // s blir forelder til r
                 r = r.venstre;
             }
-
-            p.verdi = r.verdi;   // kopierer verdien i r til p
+            p.verdi = r.verdi;           // flytte verdien til p fra r
 
             if (s != p) s.venstre = r.høyre;
             else s.høyre = r.høyre;
         }
-
-        antall--;   // det er nå én node mindre i treet
+        antall--;                           // vi minske en node i treet
         endringer++;
         return true;
     }
@@ -162,22 +153,17 @@ public class EksamenSBinTre<T> {
     public int antall(T verdi) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
         int antall = 0;
-        if (inneholder(verdi)){
-
-            Node<T> p = rot;
-            while (p != null){
-                int c = comp.compare(verdi, p.verdi);
-            if (c<0)
-                p = p.venstre;
-                else {
-                if (c == 0)
+        if (inneholder(verdi)){    // vi tar vediene fra inneholeren
+            Node<T> p = rot;         //antar p som rot
+            while (p != null){        // while løke for comperatoren
+                int cp = comp.compare(verdi, p.verdi);
+            if (cp<0) p = p.venstre;         // mender enn 0 gå til venstre
+                else { if (cp == 0)
                     antall++;
-                p=p.høyre;
+                p=p.høyre;                //  gå til høyre
             }
             }
-
         }
-
         return antall;
     }
 
@@ -188,6 +174,7 @@ public class EksamenSBinTre<T> {
         antall = 0;           //oppdetere antallet
         endringer++;        // treet er endret
     }
+
     private void nullstill(Node<T> p)
     {
         if (p.venstre != null)
@@ -202,7 +189,6 @@ public class EksamenSBinTre<T> {
         }
         p.verdi = null;                    // nuller verdien
     }
-
     private static <T> Node<T> førstePostorden(Node<T> p) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
         while (true)   // Denne koden er fra kompendiet Programkode 5.1.7 h)
@@ -212,22 +198,17 @@ public class EksamenSBinTre<T> {
             else if (p.høyre != null) p = p.høyre;
             else return p;
         }
-
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
         Node<T> q = p.forelder;      //hjelpenode. q skal være forelder til p
-                 if (q==null){
-                p= null;
-            }else if (q.høyre==p){  //er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
-                p=q;
+                 if (q==null){ p= null;
+            }else if (q.høyre==p){ p=q;  //er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
                 // Vi kjekker venstere siden først av treet
                 // er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
-
             }else if (q.venstre==p){
-                if (q.høyre==null){
-                    p=q;
+                if (q.høyre==null){ p=q;
                     //hvis p er venstrebarnet til q og det eksisterer et høyre subtre for q er den første
                     // førstePostorden der den neste
                 }else p = førstePostorden(q.høyre);
@@ -254,8 +235,6 @@ public class EksamenSBinTre<T> {
         // vi sjekker verdien av p på den andre siden av treet
         if (p.høyre != null) postordenRecursive(p.høyre, oppgave);
         oppgave.utførOppgave(p.verdi);
-
-
     }
 
     public ArrayList<T> serialize() {
@@ -282,7 +261,7 @@ public class EksamenSBinTre<T> {
         return results;
     }
 
-    static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
+    static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c)   {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
         EksamenSBinTre<K> result = new EksamenSBinTre<K>(c); // vi kaller comparatoren her
         for (K verdi : data) {                              // en loke for each
@@ -290,6 +269,4 @@ public class EksamenSBinTre<T> {
         }
         return result;
     }
-
-
 } // ObligSBinTre
