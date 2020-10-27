@@ -80,6 +80,7 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
     E. er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
     F. hvis p er venstrebarnet til q og det eksisterer et høyre subtre for q er den første
     G. førstePostorden der den neste
+    
 * Oppgave 4:
     - Første delen er postorden. 
     A. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
@@ -96,7 +97,8 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
     F. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
     G. vi sjekker verdien i treet fra vernste siden først.
-    H. vi sjekker verdien av p på den andre siden av treet
+    H. vi sjekker verdien av p på den andre siden av treet.
+    
 * oppgave 5:
     A. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
@@ -108,7 +110,13 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
         - ende i basitilfelle.
     E. brefily, start ved å lage rot level 1, så level 2 og level 3. håntering treet fra venstre siden og så 
         høyre siden fra toppen og nedover.
-            
+       - Oppgave 5: andre delen deserialize. 
+    A. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
+                   //throw new UnsupportedOperationException("Ikke kodet ennå!");
+    B. koding i følge til tisdag forelesning. Og lage queue for treet.
+    C. vi kaller comparatoren her
+    D. Vi lage en for like for each elemet og legge verding in
+    
 * oppgave 6:
     - Første delen er fjern
     A. Jeg kommenterte ut throw exception for å kviten med null point exceptions. 
