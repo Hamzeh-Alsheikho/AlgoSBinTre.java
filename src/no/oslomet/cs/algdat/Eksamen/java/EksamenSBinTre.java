@@ -81,6 +81,7 @@ public class EksamenSBinTre<T> {
 
     public boolean leggInn(T verdi) {
        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //Jeg kopieret Programkode 5.2.3 a) fra kompendet.
         Objects.requireNonNull(verdi, "Ulovlig med nullverdier!");
 
         Node<T> p = rot, q = null;               // p starter i roten
@@ -108,6 +109,7 @@ public class EksamenSBinTre<T> {
 
     public boolean fjern(T verdi) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //koperte koden fra kompendet Løsningsforslag - oppgaver i Avsnitt 5.2.13
         if (verdi == null) return false;  // treet har ingen nullverdier
         Node<T> p = rot, q = null;         // q skal være forelder til p
         while (p != null){                 // leter etter verdi
@@ -116,8 +118,8 @@ public class EksamenSBinTre<T> {
             else if (cmp > 0) { q = p; p = p.høyre; }   // går til høyre
             else break;                               // verdien er i p
         }
-        if (p == null) return false;   //  verdien finnes ikke
-        if (p.venstre == null || p.høyre == null){  // Tilfelle 1) og 2)
+        if (p == null) return false;                      //  verdien finnes ikke
+        if (p.venstre == null || p.høyre == null){             // første og andre tilfelle
             Node<T> b = p.venstre != null ? p.venstre : p.høyre;  // b får barn venstre og høyre
             if (b != null) b.forelder = q;
             if (p == rot) rot = b;
@@ -143,6 +145,7 @@ public class EksamenSBinTre<T> {
 
     public int fjernAlle(T verdi) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //koperte koden fra kompendet Løsningsforslag - oppgaver i Avsnitt 5.2.8 oppgave 3.
         if(tom()) return 0;   // ingen verdier
         int fjernVerdi = 0;
         while (fjern(verdi)) //vi løper gjennom while løke
@@ -152,6 +155,7 @@ public class EksamenSBinTre<T> {
 
     public int antall(T verdi) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //Denne koden er kopieert fra Programkodet 5.2.6 oppgave 2.
         int antall = 0;
         if (inneholder(verdi)){    // vi tar vediene fra inneholeren
             Node<T> p = rot;         //antar p som rot
@@ -169,6 +173,7 @@ public class EksamenSBinTre<T> {
 
     public void nullstill() {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //Denne koden er kopiert fra kompendiet Oppgave 5 Løsningsforslag - oppgaver i Avsnitt 5.2.8
         if (!tom()) nullstill(rot);  // nullstiller
         rot = null;
         antall = 0;           //oppdetere antallet
@@ -202,22 +207,23 @@ public class EksamenSBinTre<T> {
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
-        Node<T> q = p.forelder;      //hjelpenode. q skal være forelder til p
-                 if (q==null){ p= null;
-            }else if (q.høyre==p){ p=q;  //er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
+        Node<T> temp = p.forelder;      //hjelpenode. temp skal være forelder til p
+                 if (temp==null){ p= null;
+            }else if (temp.høyre==p){ p=temp;  //er p høyrebarnet til temp eller temp ikke har et høyrebarn så er temp den neste
                 // Vi kjekker venstere siden først av treet
-                // er p høyrebarnet til q eller q ikke har et høyrebarn så er q den neste
-            }else if (q.venstre==p){
-                if (q.høyre==null){ p=q;
-                    //hvis p er venstrebarnet til q og det eksisterer et høyre subtre for q er den første
+                // er p venstrebarnet til tem eller temp ikke har et venstrebarnet så er temp den neste
+            }else if (temp.venstre==p){
+                if (temp.høyre==null){ p=temp;
+                    //hvis p er venstrebarnet til temp og det eksisterer et høyre subtre for temp er den første
                     // førstePostorden der den neste
-                }else p = førstePostorden(q.høyre);
+                }else p = førstePostorden(temp.høyre);
             }
             return p;
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //Denne koden er kopieert fra Programkodet 5.1.7 a men koden var var for pretorden, må endre til postorden
         Node<T> p = førstePostorden(rot); // (oppretter ny node pekere) vi tar p som rot til førstepst
         while (p != null){                // Vi løpper gjennom while loke så lenge den ikke null
             oppgave.utførOppgave(p.verdi);   //keller vi interface
@@ -233,7 +239,7 @@ public class EksamenSBinTre<T> {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
         if (p.venstre != null) postordenRecursive(p.venstre, oppgave); //vi sjekker verdien i treet fra vernste siden først
         // vi sjekker verdien av p på den andre siden av treet
-        if (p.høyre != null) postordenRecursive(p.høyre, oppgave);
+        if (p.høyre != null) postordenRecursive(p.høyre, oppgave); //Kaller seg selv- forenkle argumenter - ende i basitilfelle.
         oppgave.utførOppgave(p.verdi);
     }
 
@@ -244,16 +250,16 @@ public class EksamenSBinTre<T> {
             return results;
         }
         Queue<Node<T>> q = new LinkedList<>();  // lager en queue som tar elementer in noden.
-        q.add(rot);                             // legge til roten først
+        q.add(rot);                             // legge til roten først til arryet
         while (!q.isEmpty()) {                  // vi løper gjennom en while løke
-            int sizeOfqueue = q.size();
-            for (int i = 0; i < sizeOfqueue; i++) { // - så kaller vi medthoden.
-                Node<T> temp = q.remove();            // -forenkle argumenter
-                results.add(temp.verdi);              // - ende i basitilfelle
+            int sizeOfqueue = q.size();          // Hjelpe veriable for size
+            for (int i = 0; i < sizeOfqueue; i++) {
+                Node<T> temp = q.remove();            // legge til venstre barn
+                results.add(temp.verdi);
                 if (temp.venstre != null) {
                     q.add(temp.venstre);
                 }
-                if (temp.høyre != null) {
+                if (temp.høyre != null) {              // legge høyre barn
                     q.add(temp.høyre);
                 }
             }
@@ -265,7 +271,7 @@ public class EksamenSBinTre<T> {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
         EksamenSBinTre<K> result = new EksamenSBinTre<K>(c); // vi kaller comparatoren her
         for (K verdi : data) {                              // en loke for each
-            result.leggInn(verdi);                           // vi legger verdier en og en
+            result.leggInn(verdi);                           // vi legger verdier en og en til treet
         }
         return result;
     }
