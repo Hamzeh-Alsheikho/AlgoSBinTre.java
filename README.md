@@ -24,17 +24,17 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
         - Jeg komenterte ut alle throw new UnsupportedOperationException("Ikke kodet ennå!"); for å kunne kjøre koden. 
         
 * Oppgave 1:
-        B. Jeg kopieret Programkode 5.2.3 a) fra kompendet.
-        C. Her har jeg opprettert en ny node q og kjørte testen. bruker komparatoren
-        D. Testen er grønn, og det ser ut al alt fugerer bra. 
-        E. Jeg pluset på anttall++ og endringen++. vellykket innlegging til slutt.
+        A. Jeg kopieret Programkode 5.2.3 a) fra kompendet.
+        B. Her har jeg opprettert en ny node q og kjørte testen. brukete komparatoren
+        C. Testen er grønn, og det ser ut al alt fugerer bra. 
+        D. Jeg pluset på anttall++ og endringen++. vellykket innlegging til slutt.
         
 * Oppgave 2: 
         A. Denne koden er kopieert fra Programkodet 5.2.6 oppgave 2.
-        B. Jeg kaller Noden //P//. 
-        D. så bruker vi while lokke. så har vi compare vediene //P.
-        C. Vi sjekker om verdien er inne eller alerde eksestere. 
-        C. jeg compare verdi to p verdi, hvis større enn 0 den går til høyre.
+        B. Jeg kaller Noden //P//. Jeg implimentere verdin. hvis ingen verdi return 0.
+        D. Bruker vi while lokke. så her compare jeg vediene //P.
+        C. Vi sjekker om verdien er finnies eller ikke, eller alerde eksestere. 
+        E. Jeg comparete verdi to p verdi, hvis større enn 0 den går til høyre.
          elles den gå til venstre.
          
 * Oppgave 3:
@@ -44,9 +44,9 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
         - Den andre delen nestePostorden
         A. Jeg laget en hjelpenode. temp skal være forelder til p.
         B. Rr p høyrebarnet til temp eller temp ikke har et høyrebarn så er temp den neste.
-        C. Vi kjekker venstere siden først av treet.
+        C. Vi kjekker høyre siden først av treet og så venstre siden.
         D. Er p venstrebarnet til tem eller temp ikke har et venstrebarnet så er temp den neste.
-        F. FørstePostorden der den neste.
+        F. FørstePostorden der den neste. 
          
 * Oppgave 4:
         - Første delen er postorden. 
@@ -54,33 +54,33 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
         B. Oppretter ny node pekere) vi tar p som rot til førstepst.
         C. Vi løpper gjennom while loke så lenge den ikke null. 
         D. keller vi interface med verdien til p.
-        E. går videre of flytte pekeren fra første til nest.
+        E. Går videre og flytte pekeren fra første til nest.
         
         - Den andre delen postordenRecursive
-        G. vi sjekker verdien i treet fra vernste siden først.
-        H. - så kaller vi medthoden. //Kaller seg selv
-           -forenkle argumenter
-           - ende i basitilfelle.
+        A. vi sjekker verdien i treet fra vernste siden først.
+        B. Så kaller vi medthoden. //Kaller seg selv
+        C. Forenkle argumenter
+        D. Ende i basitilfelle.
             
 * oppgave 5:
         - Første delen serialize
-        A. koding i følge til tisdag forelesning. Og lage queue for treet. 
-        B. Jeg lager en ny arraylist. og lage ett nytt arrayet. Flytte elementer fra binarytre til arrayetlist.
+        A. koding i følge til tisdag forelesning. Og lager queue for treet. 
+        B. Jeg lager en nytt arraylist. Flytte elementer fra binarytre til arrayetlist.
         C. vi sjekker roten om den er null
-        D. Hjelpe veriable for size
+        D. Hjelpe veriable for queuesize
         E. vi lager en quese for å legge til elemtene til arrayet. venstre barn og høyre barn.
        
         - Andre delen deserialize. 
-        A. Lag et nytt obiget fra klasset. Flytte elementer fra arrayetlist til bainarytre.
+        A. Lag et nytt object fra klasset. Flytte elementer fra arrayetlist til bainarytre.
         B. vi kaller comparatoren her
-        C. Vi lage en for like for each elemet og legge verding in.
+        C. Vi lager en for loke for each elemet og legge verding in.
         D. Brefily, start ved å lage rot level 1, så level 2 og level 3. håntering treet fra venstre siden og så 
            høyre siden fra toppen og nedover.
             
 * oppgave 6:
         - Første delen er fjern 
         A. koperte koden fra kompendet Løsningsforslag - oppgaver i Avsnitt 5.2.13
-        B. Denne koden trenger noen endring for å til passe denne legginn oppgaven.
+        B. Denne koden trenger noen endring for å til passe denne legginn oppgaven. ifh til comperatoren.
         
         - Andre delen er fjernAll
         A. koperte koden fra kompendet Løsningsforslag - oppgaver i Avsnitt 5.2.8 oppgave 3.
@@ -90,6 +90,7 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
         - Tredje delen er nullstill
         H. Denne koden er kopiert fra kompendiet Oppgave 5 Løsningsforslag - oppgaver i Avsnitt 5.2.8
         I. Jeg sjekker først om teert er tomt, hivs ikke, så nuller vi roten.
-        J. Jeg opdetere antallet og endingene i treet. hvis sluttet node har barn. venstre barnet blir forelder.
+        J. Jeg opdetere antallet og endingene i treet. hvis sluttet node har barn. venstre barnet peker til forelder. og 
+           java garbage collection slette den.
         K. Jeg lager en privet viod som tar Node<T> p. for å gjøre det rekrusive.
         L. Jeg nullstille venstre siden først og så høyre siden av treet.
